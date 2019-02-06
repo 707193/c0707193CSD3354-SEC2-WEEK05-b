@@ -62,7 +62,7 @@ namespace ConsoleApp1
             roy.dogname = "roy";
             roy.dogbreed = "spaniel";
             roy.nextdog = coco;
-            roy.previousdog = roy;
+            roy.previousdog = fifi;
 
             coco.dogname = "coco";
             coco.dogbreed = "border collie";
@@ -91,14 +91,21 @@ namespace ConsoleApp1
 
                 Console.WriteLine(current.dogname);
                 current = current.nextdog;
-                current = current.previousdog;
+               
 
 
             }
         }
+        public void walkoverthelist_tail()
+        {
+            current = tail;
+            while (current != null)
+            {
+
+                Console.WriteLine(current.dogname);
+                current = current.previousdog;
 
 
-
-    }
+            }
 }
 
