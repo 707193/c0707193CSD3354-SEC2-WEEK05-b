@@ -11,8 +11,11 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            // LINEDLISTS AND NOTES
-            Console.WriteLine("Hello World");
+            linkedlist a = new linkedlist();
+            a.run();
+            a.walkoverthelist();
+
+       
         }
     }
 
@@ -31,27 +34,54 @@ namespace ConsoleApp1
 
 
     class linkedlist
-        {
-        public  dog peanut = new dog();
+    {
+        public dog current;
+        public dog head;
+        public dog peanut = new dog();
         public dog fifi = new dog();
         public dog jordan = new dog();
         public dog fido = new dog();
 
         public void run()
         {
+            head = peanut;
+
             peanut.dogname = "peanut";
             peanut.dogbreed = "bichon";
+            peanut.nextdog = fifi;
+            peanut.previousdog = null;
 
-            fifi.dogname = "peanut";
-            fifi.dogbreed = "bichon";
+            fifi.dogname = "fifi";
+            fifi.dogbreed = "poodle";
+            fifi.nextdog = jordan;
+            fifi.previousdog = peanut;
 
-           jordan.dogname = "peanut";
-            jordan.dogbreed = "bichon";
+            jordan.dogname = "jordan";
+            jordan.dogbreed = "german shepard";
+            jordan.nextdog = fido;
+            jordan.previousdog = fifi;
 
-            fido.dogname = "peanut";
-           fido.dogbreed = "bichon";
+            fido.dogname = "fido";
+            fido.dogbreed = "beagel";
+            fido.nextdog = null;
+            fido.previousdog = jordan;
         }
-    }
-}
 
+
+        public void walkoverthelist()
+        {
+            current = head;
+            while (current != null)
+            {
+
+                Console.WriteLine(current.dogname);
+                current = current.nextdog; 
+
+
+            }
+        }
+
+
+
+    }
 
