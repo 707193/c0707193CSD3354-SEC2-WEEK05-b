@@ -63,6 +63,7 @@ namespace ConsoleApp1
             roy.dogbreed = "spaniel";
             roy.nextdog = coco;
             roy.previousdog = fifi;
+            // hhh
 
             coco.dogname = "coco";
             coco.dogbreed = "border collie";
@@ -91,7 +92,7 @@ namespace ConsoleApp1
 
                 Console.WriteLine(current.dogname);
                 current = current.nextdog;
-               
+
 
 
             }
@@ -107,5 +108,6 @@ namespace ConsoleApp1
 
 
             }
-}
+        }
+    }
 
