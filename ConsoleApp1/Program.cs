@@ -15,7 +15,7 @@ namespace ConsoleApp1
             a.run();
             a.walkoverthelist();
 
-       
+
         }
     }
 
@@ -28,8 +28,9 @@ namespace ConsoleApp1
             // that creates objects from a type
         }
         public String dogname;
-        public  String dogbreed;
-        dog nextdog;
+        public String dogbreed;
+        public dog nextdog;
+        public dog previousdog;
     }
 
 
@@ -41,6 +42,8 @@ namespace ConsoleApp1
         public dog fifi = new dog();
         public dog jordan = new dog();
         public dog fido = new dog();
+        public dog roy = new dog();
+        public dog coco = new dog();
 
         public void run()
         {
@@ -53,18 +56,30 @@ namespace ConsoleApp1
 
             fifi.dogname = "fifi";
             fifi.dogbreed = "poodle";
-            fifi.nextdog = jordan;
+            fifi.nextdog = roy;
             fifi.previousdog = peanut;
+
+            roy.dogname = "roy";
+            roy.dogbreed = "spaniel";
+            roy.nextdog = coco;
+            roy.previousdog = roy;
+
+            coco.dogname = "coco";
+            coco.dogbreed = "border collie";
+            coco.nextdog = jordan;
+            coco.previousdog = roy;
 
             jordan.dogname = "jordan";
             jordan.dogbreed = "german shepard";
             jordan.nextdog = fido;
-            jordan.previousdog = fifi;
+            jordan.previousdog = coco;
 
             fido.dogname = "fido";
             fido.dogbreed = "beagel";
             fido.nextdog = null;
             fido.previousdog = jordan;
+
+
         }
 
 
@@ -75,7 +90,8 @@ namespace ConsoleApp1
             {
 
                 Console.WriteLine(current.dogname);
-                current = current.nextdog; 
+                current = current.nextdog;
+                current = current.previousdog;
 
 
             }
@@ -84,4 +100,5 @@ namespace ConsoleApp1
 
 
     }
+}
 
